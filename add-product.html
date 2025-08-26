@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Product | Mayondo Wood & Furniture</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <h1>Add New Product</h1>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="admin-dashboard.html">Dashboard</a></li>
+        <li><a href="inventory.html">Inventory</a></li>
+        <li><a href="sales.html">Sales</a></li>
+        <li><a href="stock.html">Stock</a></li>
+        <li><a href="logout.html">Logout</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="form-container">
+    <div class="form-box">
+      <h2>Enter Product Details</h2>
+      <form id="productForm">
+        <label for="productName">Product Name:</label>
+        <input type="text" id="productName" required>
+
+        <label for="productType">Type:</label>
+        <select id="productType" required>
+          <option value="">--Select--</option>
+          <option value="Wood">Wood</option>
+          <option value="Furniture">Furniture</option>
+        </select>
+
+        <label for="costPrice">Cost Price:</label>
+        <input type="number" id="costPrice" required>
+
+        <label for="salePrice">Sale Price:</label>
+        <input type="number" id="salePrice" required>
+
+        <label for="quantity">Quantity:</label>
+        <input type="number" id="quantity" required>
+
+        <label for="supplier">Supplier:</label>
+        <input type="text" id="supplier" required>
+
+        <label for="date">Date Added:</label>
+        <input type="date" id="date" required>
+
+        <button type="submit" class="btn">Save Product</button>
+      </form>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Mayondo Wood & Furniture Ltd</p>
+  </footer>
+
+  <script src="js/add-product.js"></script>
+   <script src="js/script.js"></script>
+</body>
+</html>

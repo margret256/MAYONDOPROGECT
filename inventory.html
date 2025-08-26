@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inventory | Mayondo Wood & Furniture</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <h1>Inventory</h1>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="admin-dashboard.html">Dashboard</a></li>
+        <li><a href="add-product.html">Add Products</a></li>
+        <li><a href="sales.html">Sales</a></li>
+        <li><a href="stock.html">Stock</a></li>
+        <li><a href="logout.html">Logout</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="inventory-page">
+    <h2>Available Products</h2>
+    <tbody id="inventoryBody">
+     <thead>
+  <tr>
+    <th>Product Name</th>
+    <th>Type</th>
+    <th>Cost Price</th>
+    <th>Sale Price</th>
+    <th>Quantity</th>
+    <th>Supplier</th>
+    <th>Date Added</th>
+    <th>Action</th>
+  </tr>
+</thead>
+<table id="inventoryBody"></table>
+      <tbody>
+        <tr>
+          <td>Timber (Hardwood)</td>
+          <td>Wood</td>
+          <td>$150</td>
+          <td>$200</td>
+          <td>50</td>
+          <td>Uganda Timber Ltd</td>
+          <td>2025-08-01</td>
+        </tr>
+        <tr>
+          <td>Sofa Set</td>
+          <td>Furniture</td>
+          <td>$500</td>
+          <td>$750</td>
+          <td>10</td>
+          <td>MWF Workshop</td>
+          <td>2025-08-15</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="add-btn">
+      <a href="add-product.html" class="btn">➕ Add New Product</a>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Mayondo Wood & Furniture Ltd</p>
+  </footer>
+  <script src="js/inventory.js"></script>
+   <script src="js/script.js"></script>
+</body>
+</html>

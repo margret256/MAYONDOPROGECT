@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Logout | Mayondo Wood & Furniture</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script>
+    // Simulated logout
+    window.onload = function() {
+      // Clear any saved session data (if used later)
+      localStorage.clear();
+
+      // Redirect back to Welcome Page after 3 seconds
+      setTimeout(() => {
+        window.location.href = "index.html";
+      }, 3000);
+    }
+  </script>
+</head>
+<body>
+  <main class="logout-page">
+    <h1>You have logged out successfully ✅</h1>
+    <p>Redirecting you to the Welcome Page...</p>
+  </main>
+   <script src="js/script.js"></script>
+</body>
+</html>
