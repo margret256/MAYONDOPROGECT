@@ -121,3 +121,5 @@ function editSale(index) {
   localStorage.setItem("sales", JSON.stringify(sales));
   location.reload();
 }
+
+   
