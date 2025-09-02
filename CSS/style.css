@@ -1,5 +1,5 @@
 body {
-  background-image: url(../images/back3.jpg);
+  background-image: url(../images/back9.jpg);
 }
 /* Reset */
 * {
@@ -74,12 +74,10 @@ header {
 footer {
   text-align: center;
   padding: 1rem;
-  background: #080000;
+  background: #fdfafa;
   font-weight: bolder;
   font-family: Georgia, 'Times New Roman', Times, serif;
-  color: #f41804;
 }
-
 
 /* Forms */
 .form-container {
@@ -89,25 +87,29 @@ footer {
   gap: 2rem;
   margin: 2rem auto;
   max-width: 1000px;
+   transition: transform 0.1s;
+    transform: scale(1.03);
 }
 
 .form-box {
   flex: 1;
-  background-image: url(../images/2.jpg);
+  background-image: url(../images/back9.jpg);
+  background-position: center;
   padding: 4rem;
   border-radius: 15px;
-  box-shadow: 0 4px 6px rgba(7, 0, 0, 0.1);
+  box-shadow: 0 20px 20px rgba(7, 0, 0, 0.1);
 }
 
 .form-box h2 {
   margin-bottom: 1rem;
-  color: #f4f2f6;
+  color: #7a04f0;
 }
 
 form label {
   display: block;
   margin-top: 1rem;
   font-weight: bolder;
+  color:#f4f3f5
 }
 
 form input,
@@ -115,8 +117,8 @@ form select {
   width: 100%;
   padding: 0.6rem;
   margin-top: 0.3rem;
-  border: 1px solid #080000;
-  border-radius: 8px;
+  border: 2px solid #080000;
+  border-radius: 10px;
 }
 
 form button {
@@ -142,7 +144,7 @@ form button {
 
 .nav-links a {
   text-decoration: none;
-  color: rgb(210, 6, 6);
+  color: #7a04f0;
   padding: 0.7rem 1rem;
   border-radius: 8px;
   transition: background 0.3s;
@@ -162,7 +164,7 @@ form button {
 .dashboard h2,h1 {
   font-size: 2rem;
   margin-bottom: 1rem;
-  color: #eef2f2;
+  color: #7a04f0;
   font-weight: bolder;
   font-family: Georgia, 'Times New Roman', Times, serif;
 }
@@ -188,7 +190,7 @@ table {
   width: 100%;
   border-collapse: collapse;
   margin: 1rem auto;
-  background: #f8f7f7;
+  background-color:rgb(247, 113, 113);
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
 }
 
@@ -198,16 +200,9 @@ td {
   padding: 0.8rem;
   text-align: center;
 }
-
 th {
-  background: #f9f7f7;
   color: rgb(13, 0, 0);
 }
-
-tr:nth-child(even) {
-  background: #f2f2f2;
-}
-
 .add-btn {
   text-align: center;
   margin-top: 1.5rem;
