@@ -101,7 +101,7 @@ footer {
 
 .form-box h2 {
   margin-bottom: 1rem;
-  color: #5d03ec;
+  color: #f4f2f6;
 }
 
 form label {
@@ -159,14 +159,17 @@ form button {
   text-align: center;
 }
 
-.dashboard h2 {
+.dashboard h2,h1 {
   font-size: 2rem;
   margin-bottom: 1rem;
-  color: #2012f1;
+  color: #eef2f2;
   font-weight: bolder;
   font-family: Georgia, 'Times New Roman', Times, serif;
 }
-
+p{
+  font-size: 20px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
 
 /* Inventory Page */
 .inventory-page {
@@ -185,7 +188,7 @@ table {
   width: 100%;
   border-collapse: collapse;
   margin: 1rem auto;
-  background: #f8d8d8;
+  background: #f8f7f7;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
 }
 
@@ -197,8 +200,8 @@ td {
 }
 
 th {
-  background: #eb9494;
-  color: white;
+  background: #f9f7f7;
+  color: rgb(13, 0, 0);
 }
 
 tr:nth-child(even) {
@@ -254,28 +257,28 @@ tr:nth-child(even) {
 .attendant-card {
   background: #eab9b9;
   padding: 1rem;
-  width: 220px;
+  width: 250px;
   border-radius: 12px;
-  box-shadow: 0 4px 6px rgba(15, 0, 0, 0.977);
+  box-shadow: 0 20px 20px rgba(15, 5, 0, 0.977);
   text-align: center;
   transition: transform 0.1s;
 }
 
 .attendant-card:hover {
-  transform: scale(1.02);
+  transform: scale(1.03);
 }
 
 .attendant-card img {
-  width: 100px;
-  height: 100px;
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
   object-fit: cover;
   margin-bottom: 1rem;
 }
 
-.attendant-card h3 {
+.attendant-card h3,p,h2 {
   margin-bottom: 0.5rem;
-  color: #3606f5;
+  color: #03000a;
   font-family: Georgia, 'Times New Roman', Times, serif;
   font-weight: bolder;
 }
