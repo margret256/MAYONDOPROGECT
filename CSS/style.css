@@ -11,14 +11,19 @@ body {
 
 /* Header */
 header {
-  background: #4a2c2a;
-  color: white;
+  background: -o-linear-gradient(135deg,#4E342E,#6D4C41,#A1887F);
+  color:#fff;
   text-align: center;
-  padding: 1rem;
+  padding: 10px 10px;
   font-family: Georgia, 'Times New Roman', Times, serif;
   font-weight: bolder;
 }
-
+header p{
+  color:#04f004;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-weight: bolder;
+  
+}
 /* Hero Section */
 .hero {
   position: relative;
@@ -27,11 +32,11 @@ header {
   overflow: hidden;
 }
 
-.hero img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  filter: brightness(70%);
+.logo img {
+  width: 800px;
+  height: 600px;
+display:block;
+margin: 0 auto 10px auto;  
 }
 
 .hero .overlay {
@@ -54,16 +59,50 @@ header {
   color:white;
 }
 
+/* Gallery Layout */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+  padding: 30px;
+}
+
+/* Card Styling */
+.card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  text-align: center;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+/* Card Images */
+.card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  display: block;
+}
+
+
 /* Button */
 .btn {
   display: inline-block;
   background: #ff914d;
-  color: white;
+  color: rgb(19, 1, 1);
   padding: 0.8rem 1.5rem;
   border-radius: 25px;
   text-decoration: none;
-  font-size: 1.1rem;
+  font-size: 1.3rem;
   transition: background 0.3s;
+  font-weight: bolder;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+
 }
 
 .btn:hover {
@@ -74,7 +113,7 @@ header {
 footer {
   text-align: center;
   padding: 1rem;
-  background: #fdfafa;
+  background: #090000;
   font-weight: bolder;
   font-family: Georgia, 'Times New Roman', Times, serif;
 }
@@ -102,14 +141,14 @@ footer {
 
 .form-box h2 {
   margin-bottom: 1rem;
-  color: #7a04f0;
+  color: #04f01c;
 }
 
 form label {
   display: block;
   margin-top: 1rem;
   font-weight: bolder;
-  color:#f4f3f5
+  color:#04eb4a
 }
 
 form input,
@@ -144,7 +183,7 @@ form button {
 
 .nav-links a {
   text-decoration: none;
-  color: #7a04f0;
+  color: #04f024;
   padding: 0.7rem 1rem;
   border-radius: 8px;
   transition: background 0.3s;
@@ -164,7 +203,7 @@ form button {
 .dashboard h2,h1 {
   font-size: 2rem;
   margin-bottom: 1rem;
-  color: #7a04f0;
+  color: #18f004;
   font-weight: bolder;
   font-family: Georgia, 'Times New Roman', Times, serif;
 }
@@ -180,7 +219,7 @@ p{
 
 .inventory-page h2 {
   margin-bottom: 1rem;
-  color: #faf8f8;
+  color: #10f204;
   text-align: center;
   font-weight: bolder;
   font-family: Georgia, 'Times New Roman', Times, serif;
@@ -190,7 +229,7 @@ table {
   width: 100%;
   border-collapse: collapse;
   margin: 1rem auto;
-  background-color:rgb(247, 113, 113);
+  background-color:rgb(245, 205, 205);
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
 }
 
@@ -201,7 +240,7 @@ td {
   text-align: center;
 }
 th {
-  color: rgb(13, 0, 0);
+  color: rgb(2, 18, 0);
 }
 .add-btn {
   text-align: center;
@@ -222,7 +261,7 @@ th {
 .stock-page h2 {
   text-align: center;
   margin-bottom: 1rem;
-  color: #fdf9f9;
+  color: #22f506;
 }
 
 /* Highlight low stock items */
@@ -273,7 +312,7 @@ th {
 
 .attendant-card h3,p,h2 {
   margin-bottom: 0.5rem;
-  color: #03000a;
+  color: #04f804;
   font-family: Georgia, 'Times New Roman', Times, serif;
   font-weight: bolder;
 }
@@ -290,7 +329,7 @@ th {
 }
 
 .logout-page h1 {
-  color: #f8f2f2;
+  color: #35ec08;
   margin-bottom: 1rem;
 }
 
