@@ -22,7 +22,7 @@ header p{
   color:#04f004;
   font-family: Georgia, 'Times New Roman', Times, serif;
   font-weight: bolder;
-  
+  font-size: 2rem;
 }
 /* Hero Section */
 .hero {
@@ -39,7 +39,7 @@ display:block;
 margin: 0 auto 10px auto;  
 }
 
-.hero .overlay {
+.hero .card-content {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -54,9 +54,9 @@ margin: 0 auto 10px auto;
 }
 
 .hero p {
-  font-size: 1.2rem;
+  font-size: 2rem;
   margin-bottom: 2rem;
-  color:white;
+  color:rgb(3, 248, 40);
 }
 
 /* Gallery Layout */
@@ -69,9 +69,8 @@ margin: 0 auto 10px auto;
 
 /* Card Styling */
 .card {
-  background: #fff;
   border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 70px 0px rgba(0,0,0,0.1);
   overflow: hidden;
   transition: transform 0.3s ease;
   text-align: center;
@@ -112,7 +111,8 @@ margin: 0 auto 10px auto;
 /* Footer */
 footer {
   text-align: center;
-  padding: 1rem;
+  color:#04eb4a;
+  padding: 1.9rem;
   background: #090000;
   font-weight: bolder;
   font-family: Georgia, 'Times New Roman', Times, serif;
@@ -140,21 +140,24 @@ footer {
 }
 
 .form-box h2 {
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
   color: #04f01c;
+  font-size: 2rem;
 }
 
 form label {
   display: block;
   margin-top: 1rem;
   font-weight: bolder;
+  font-size: 1.4rem;
   color:#04eb4a
+  
 }
 
 form input,
 form select {
   width: 100%;
-  padding: 0.6rem;
+  padding: 0.7rem;
   margin-top: 0.3rem;
   border: 2px solid #080000;
   border-radius: 10px;
@@ -164,13 +167,7 @@ form button {
   margin-top: 1.5rem;
   width: 100%;
 }
-
-
-/* Navigation */
-/* nav {
-  background: #542d2a;
-} */
-
+/*nav lnks*/
 .nav-links {
   display: flex;
   justify-content: center;
@@ -184,6 +181,7 @@ form button {
 .nav-links a {
   text-decoration: none;
   color: #04f024;
+  font-size: 1.4rem;
   padding: 0.7rem 1rem;
   border-radius: 8px;
   transition: background 0.3s;
@@ -196,12 +194,12 @@ form button {
 
 /* Dashboard */
 .dashboard {
-  padding: 2rem;
+  padding: 4rem;
   text-align: center;
 }
 
 .dashboard h2,h1 {
-  font-size: 2rem;
+  font-size: 4rem;
   margin-bottom: 1rem;
   color: #18f004;
   font-weight: bolder;
@@ -266,9 +264,9 @@ th {
 
 /* Highlight low stock items */
 .low-stock {
-  background-color: #eb9494;
+  background-color: #f40404;
   /* light red */
-  color: #900;
+  color: rgb(2, 0, 0);
   /* dark red text */
   font-weight: bold;
 }
@@ -310,14 +308,18 @@ th {
   margin-bottom: 1rem;
 }
 
-.attendant-card h3,p,h2 {
+.attendant-card h3 {
   margin-bottom: 0.5rem;
-  color: #04f804;
+  color: #000b00;
   font-family: Georgia, 'Times New Roman', Times, serif;
   font-weight: bolder;
 }
-
-
+.attendant-card p{
+color:#000b00;
+}
+.attendant-card h2{
+color:#02f802;
+}
 /* Logout Page */
 .logout-page {
   display: flex;
@@ -388,7 +390,7 @@ th {
     border: none;
     border-radius: 8px;
     text-align:center;
-    font-size: 16px;
+    font-size: 1rem;
     font-weight: bolder;
     font-family: Georgia, 'Times New Roman', Times, serif;
     cursor: pointer;

@@ -1,104 +1,164 @@
   body {
-      font-family:Georgia, 'Times New Roman', Times, serif;
-     background-image: url(../images/back9.jpg);
-     background-position: center;
-      margin: 0;
-      padding: 0;
-    }
-    header {
-        background: #4a2523;
-      color: white;
-      padding: 15px;
-      text-align: center;
-    }
-    .form-container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin-top: 40px;
-      flex-direction: column;
-    }
-    .form-box {
-       background-image: url(../images/melissa.jpg);
-       background-position: center;
-      padding: 25px;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      width: 400px;
-      margin-bottom: 30px;
-    }
-    .form-box h2,p,h1 {
-      text-align: center;
-      color: #7a04f0;
-      font-weight: bolder;
-      font-family: Georgia, 'Times New Roman', Times, serif;
-    }
-    label {
-      display: block;
-      margin-top: 12px;
-      font-weight: bolder;
-      color:#7a04f0;
-    }
-    input {
-      width: 100%;
-      padding: 10px;
-      margin-top: 6px;
-      border: 2px solid #0c0101;
-      border-radius: 6px;
-       box-shadow: 0 4px 6px rgba(97, 4, 245, 0.1);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-image: url(../images/back9.jpg);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  header {
+    background: -o-linear-gradient(135deg, #4E342E, #6D4C41, #A1887F);
+    color: #31f206;
+    text-align: center;
+    padding: 10px 10px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: bolder;
+    font-size: 2rem;
+  }
+  /* nav*/
+  .nav-links {
+     display: flex;
+  justify-content: center;
+  list-style: none;
+  }
+
+  .nav-links li {
+  margin: 0 1rem;
 }
-    
-    button {
-      margin-top: 15px;
-      width: 100%;
-      padding: 12px;
-      background-color: #eb882c;
-      color: white;
-      border: none;
-      border-radius: 6px;
-      font-size: 16px;
-      cursor: pointer;
-    }
-    button:hover {
-      background-color: #fe7e06;
-    }
-    table {
-      border-collapse: collapse;
-      width: 80%;
-      background: white;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    }
-    table, th, td {
-      border: 2px solid #0b0000;
-      padding: 10px;
-      text-align: center;
-    }
-    .table, h2{
-color: #7a04f0;
-    }
-    th {
-      background-color: #120801;
-      color: white;
-    }
-    .action-btn {
-      padding: 2px 3px;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-    }
-    .remove-btn {
-      background-color: crimson;
-      color: white;
-      padding:4px;
-    }
-    .remove-btn:hover {
-      background-color: darkred;
-    }
-    .edit-btn {
-      background-color: #fca607;
-      color: white;
-      margin-right: 5px;
-    }
-    .edit-btn:hover {
-      background-color: #f18c10;
-    }
+
+.nav-links a {
+  text-decoration: none;
+  color: #04f024;
+  font-size: 1.4rem;
+  padding: 0.7rem 1rem;
+  border-radius: 8px;
+  transition: background 0.3s;
+}
+
+.nav-links a:hover {
+  background: #ff914d;
+  color: #fff;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  color:#04f00c;
+  padding: 1.9rem;
+  background: #090000;
+  font-weight: bolder;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+  .form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 40px;
+    flex-direction: column;
+  }
+
+  .form-box {
+    flex:1;
+    background-image: url(../images/back9.jpg);
+    background-position: center;
+    padding: 4rem;
+    border-radius: 15px;
+    box-shadow: 0 20px 20px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+  }
+
+  .form-box h1 {
+    text-align: center;
+    color: #04f00c;
+    font-weight: bolder;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 4rem;
+  }
+.form-box{
+ text-align:left;
+    color: #04f00c;
+    font-weight: bolder;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 1.4rem;
+}
+  label {
+    display: block;
+    margin-top: 12px;
+    font-weight: bolder;
+    font-size: 1.3rem;
+    color: #65fc01;
+  }
+
+  input {
+    width: 100%;
+    padding:0.7rem;
+    margin-top: 0.3rem;
+    border: 2px solid #0c0101;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(97, 4, 245, 0.1);
+  }
+
+  button {
+    margin-top: 1.5rem;
+    display: inline-block;
+    background: #ff914d;
+    color: rgb(19, 1, 1);
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
+    text-decoration: none;
+    text-align: center;
+    font-size: 1.3rem;
+    transition: background 0.3s;
+    font-weight: bolder;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+  }
+
+  button:hover {
+    background-color: #fe7e06;
+  }
+
+  table {
+    border-collapse: collapse;
+    width: 80%;
+    background: rgb(238, 193, 193);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  table,
+  th,
+  td {
+    border: 2px solid #0b0000;
+    padding: 10px;
+    text-align: center;
+  }
+  .table,
+  h2 {
+    color: #2ff004;
+    font-size: 2rem;
+  }
+  th {
+    background-color: #120801;
+    color: white;
+  }
+  .action-btn {
+    padding: 2px 3px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  .remove-btn {
+    background-color: crimson;
+    color: rgb(12, 0, 0);
+    padding: 4px;
+  }
+  .remove-btn:hover {
+    background-color: darkred;
+  }
+  .edit-btn {
+    background-color: #f08800;
+    color: rgb(5, 0, 0);
+    margin-right: 5px;
+  }
+  .edit-btn:hover {
+    background-color: #f18c10;
+  }
