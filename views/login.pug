@@ -1,0 +1,31 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title Login | Mayondo Wood &amp; Furniture
+  link(rel='stylesheet' href='/public/CSS/style.css')
+header
+  h1 Mayondo Wood &amp; Furniture
+  p Login to continue
+main.form-container
+  .form-box
+    h2 Login
+    // Correct form
+    form#loginForm(onsubmit='redirectToRole(); return false;')
+      label(for='loginEmail') Email:
+      input#loginEmail(type='email' required='')
+      label(for='loginPassword') Password:
+      input#loginPassword(type='password' required='')
+      label(for='loginRole') Role:
+      select#loginRole(required='')
+        option(value='') --Select Role--
+        option(value='admin') Administrator
+        option(value='manager') Manager
+        option(value='attendant') Attendant
+      button.btn(type='submit') Login
+    p
+      | Don&apos;t have an account? 
+      a(href='register.html') Register here
+footer
+  p &copy; 2025 Mayondo Wood &amp; Furniture Ltd
+script(src='/public/js/login.js')

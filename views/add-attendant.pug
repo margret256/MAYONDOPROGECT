@@ -1,0 +1,40 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title Add Attendant | Mayondo Wood &amp; Furniture
+  link(rel='stylesheet' href='/public/CSS/add-attendant.css')
+header
+  h1 Mayondo Wood &amp; Furniture
+  nav
+    ul.nav-links
+      li
+        a(href='logout.html') Logout
+main.form-container
+  .form-box
+    h2 Register Attendant
+    form#attendantForm(onsubmit='saveAttendant(); return false;')
+      label(for='attendantName') Full Name
+      input#attendantName(type='text' required='')
+      label(for='attendantEmail') Email
+      input#attendantEmail(type='email' required='')
+      label(for='attendantPhone') Phone
+      input#attendantPhone(type='tel' required='')
+      label(for='attendantPassword') Password
+      input#attendantPassword(type='password' required='')
+      label(for='attendantPassword') Address
+      input#attendantAddress(type='address' required='')
+      button(type='submit') Add Attendant
+  h2 Attendants List
+  table#attendantsTable
+    thead
+      tr
+        th Name
+        th Email
+        th Phone
+        th Action
+    tbody
+      // Attendants will appear here
+script(src='/public/js/add-attendant.js')
+footer
+  p &copy; 2025 Mayondo Wood &amp; Furniture Ltd

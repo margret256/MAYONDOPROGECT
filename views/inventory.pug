@@ -1,0 +1,59 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title Inventory | Mayondo Wood &amp; Furniture
+  link(rel='stylesheet' href='/public/CSS/style.css')
+header
+  h1 Inventory
+  nav
+    ul.nav-links
+      li
+        a(href='admin-dashboard.html') Dashboard
+      li
+        a(href='add-product.html') Add Products
+      li
+        a(href='sales.html') Sales
+      li
+        a(href='stock.html') Stock
+      li
+        a(href='logout.html') Logout
+main.inventory-page
+  h2 Available Products
+  table#inventoryBody
+    table
+      thead
+        tr
+          th Product Name
+          th Type
+          th Cost Price
+          th Sale Price
+          th Quantity
+          th Supplier
+          th Date Added
+          th Action
+      tbody#inventoryBody
+        tr
+          td Timber (Hardwood)
+          td Wood
+          td $150
+          td $200
+          td 50
+          td Uganda Timber Ltd
+          td 2025-08-01
+          td &mdash;
+        tr
+          td Sofa Set
+          td Furniture
+          td $500
+          td $750
+          td 10
+          td MWF Workshop
+          td 2025-08-15
+          td &mdash;
+    .add-btn
+      a.btn(href='add-product.html') &#x2795; Add New Product
+footer
+  p &copy; 2025 Mayondo Wood &amp; Furniture Ltd
+script(src='/public/js/inventory.js')
+script(src='/public/js/script.js')

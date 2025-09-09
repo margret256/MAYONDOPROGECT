@@ -1,0 +1,52 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title Attendant Dashboard | Mayondo Wood &amp; Furniture
+  link(rel='stylesheet' href='/public/CSS/style.css')
+header
+  h1 Attendant Dashboard
+  nav
+    ul.nav-links
+      li
+        a(href='logout.html') Logout
+main.attendant-page
+  h2 Our Attendants
+  .attendants-container
+    .attendant-card
+      img(src='/public/images/attendant 1.jpg' alt='Attendant 1')
+      h3 Zzilabamuzale John
+      p Role: Carpenter
+    .attendant-card
+      img(src='/public/images/attendant 2.jpg' alt='Attendant 2')
+      h3 Nankya Vivian
+      p Role: Customer Support
+    .attendant-card
+      img(src='/public/images/attendant 3.jpg' alt='Attendant 3')
+      h3 Michael Brown
+      p Role: Loading &amp; Offloading
+    .attendant-card
+      img(src='/public/images/attendant 4.jpg' alt='Attendant 4')
+      h3 Nanyonga Margret
+      p Role: Workshop Assistant
+    .attendant-card
+      img(src='/public/images/attendant 5.jpg' alt='Attendant 5')
+      h3 Unity Busingye
+      p Role: Furniture Assembly
+    .attendant-card
+      img(src='/public/images/attendant 6.jpg' alt='Attendant 6')
+      h3 Raymondo John Paul
+      p Role: Sales &amp; Customer Follow-up
+    .attendant-card
+      img(src='/public/images/attendant 7.jpg' alt='Attendant 7')
+      h3 Musoke Kyle
+      p Role: Stock Management
+    .attendant-card
+      img(src='/public/images/attendant 8.jpg' alt='Attendant 8')
+      h3 Mark Lubenga
+      p Role: Delivery Coordination
+button(onclick="window.location.href='add-attendant.html'")
+  | Manage Attendants
+footer
+  p &copy; 2025 Mayondo Wood &amp; Furniture Ltd
+script(src='/public/js/script.js')

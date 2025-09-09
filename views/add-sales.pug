@@ -1,0 +1,53 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title Add Sale | Mayondo Wood &amp; Furniture
+  link(rel='stylesheet' href='/public/CSS/style.css')
+header
+  h1 Add Sale
+  nav
+    ul.nav-links
+      li
+        a(href='admin-dashboard.html') Dashboard
+      li
+        a(href='inventory.html') Inventory
+      li
+        a(href='sales.html') Sales
+      li
+        a(href='stock.html') Stock
+      li
+        a(href='logout.html') Logout
+main.form-container
+  .form-box
+    h2 Enter Sale Details
+    form#saleForm
+      label(for='customerName') Customer Name:
+      input#customerName(type='text' name='customerName' required='')
+      label(for='product') Product:
+      input#product(type='text' name='product' required='')
+      label(for='quantity') Quantity:
+      input#quantity(type='number' name='quantity' required='')
+      label(for='price') Price per Item:
+      input#price(type='number' name='price' required='')
+      label(for='paymentType') Payment Type:
+      select#paymentType(name='paymentType' required='')
+        option(value='Cash') Cash
+        option(value='Cheque') Cheque
+        option(value='Bank Transfer') Bank Transfer
+        option(value='Overdraft') Overdraft
+      label(for='transport') Include Transport:
+      select#transport(name='transport' required='')
+        option(value='no') No
+        option(value='yes') Yes (Add 5%)
+      label(for='agent') Sales Agent:
+      input#agent(type='text' name='agent' required='')
+      label(for='date') Date of Sale:
+      input#date(type='date' name='date' required='')
+      p
+        strong Total:
+        span#totalprice Shs. 0.00
+      button.btn(type='submit') Save Sale
+footer
+  p &copy; 2025 Mayondo Wood &amp; Furniture Ltd
+script(src='/public/js/add-sales.js')

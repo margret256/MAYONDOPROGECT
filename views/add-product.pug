@@ -1,0 +1,46 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title Add Product | Mayondo Wood &amp; Furniture
+  link(rel='stylesheet' href='/public/CSS/style.css')
+header
+  h1 Add New Product
+  nav
+    ul.nav-links
+      li
+        a(href='admin-dashboard.html') Dashboard
+      li
+        a(href='inventory.html') Inventory
+      li
+        a(href='sales.html') Sales
+      li
+        a(href='stock.html') Stock
+      li
+        a(href='logout.html') Logout
+main.form-container
+  .form-box
+    h2 Enter Product Details
+    form#productForm(onsubmit='saveAttendant(); return false;')
+      label(for='productName') Product Name:
+      input#productName(type='text' required='')
+      label(for='productType') Type:
+      select#productType(required='')
+        option(value='') --Select--
+        option(value='Wood') Wood
+        option(value='Furniture') Furniture
+      label(for='costPrice') Cost Price:
+      input#costPrice(type='number' required='')
+      label(for='salePrice') Sale Price:
+      input#salePrice(type='number' required='')
+      label(for='quantity') Quantity:
+      input#quantity(type='number' required='')
+      label(for='supplier') Supplier:
+      input#supplier(type='text' required='')
+      label(for='date') Date Added:
+      input#date(type='date' required='')
+      button.btn(type='submit') Save Product
+footer
+  p &copy; 2025 Mayondo Wood &amp; Furniture Ltd
+script(src='/public/js/add-product.js')
+script(src='/public/js/script.js')

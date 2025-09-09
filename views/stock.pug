@@ -1,0 +1,63 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title Stock | Mayondo Wood &amp; Furniture
+  link(rel='stylesheet' href='/public/CSS/style.css')
+header
+  h1 Stock
+  nav
+    ul.nav-links
+      li
+        a(href='admin-dashboard.html') Dashboard
+      li
+        a(href='inventory.html') Inventory
+      li
+        a(href='sales.html') Sales
+      li
+        a(href='logout.html') Logout
+main.stock-page
+  h2 Stock Levels
+  table#stockTable
+    thead
+      tr
+        th Product Name
+        th Type
+        th Cost Price
+        th Sale Price
+        th Quantity Available
+    tbody
+      tr
+        td Timber (Hardwood)
+        td Wood
+        td $150
+        td $200
+        td 50
+      tr
+        td Book Shelf
+        td Furniture
+        td $500
+        td $750
+        td 10
+      tr
+        td CoffeeTable
+        td Furniture
+        td $250
+        td $500
+        td 60
+      tr
+        td Beds
+        td Furniture
+        td $350
+        td $900
+        td 95
+      tr
+        td Chairs
+        td Furniture
+        td $950
+        td $1000
+        td 100
+footer
+  p &copy; 2025 Mayondo Wood &amp; Furniture Ltd
+script(src='/public/js/stock.js')
+script(src='/public/js/script.js')

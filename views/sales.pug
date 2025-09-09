@@ -1,0 +1,40 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title Sales | Mayondo Wood &amp; Furniture
+  link(rel='stylesheet' href='/public/CSS/style.css')
+header
+  h1 Sales
+  nav
+    ul.nav-links
+      li
+        a(href='admin-dashboard.html') Dashboard
+      li
+        a(href='inventory.html') Inventory
+      li
+        a(href='add-product.html') Add Products
+      li
+        a(href='stock.html') Stock
+      li
+        a(href='logout.html') Logout
+main.sales-page
+  h2 Sales Records
+  table#salesTable(border='1')
+    thead
+      tr
+        th Customer
+        th Product
+        th Quantity
+        th Date
+        th Payment
+        th Agent
+        th Discount/Transport
+        th Total
+        th Actions
+    tbody#salesBody
+  .add-btn
+    a.btn(href='/public/js/add-sales.js') &#x2795; Add New Sale
+footer
+  p &copy; 2025 Mayondo Wood &amp; Furniture Ltd
+script(src='js/sales.js')

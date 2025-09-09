@@ -1,0 +1,33 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title Register | Mayondo Wood &amp; Furniture
+  link(rel='stylesheet' href='/public/CSS/style.css')
+header
+  h1 Mayondo Wood &amp; Furniture
+  p Create an account
+main.form-container
+  .form-box
+    h2 Register
+    form#registerForm
+      label(for='regName') Full Name:
+      input#regName(type='text' required='')
+      label(for='regEmail') Email:
+      input#regEmail(type='email' required='')
+      label(for='regPassword') Password:
+      input#regPassword(type='password' required='')
+      label(for='regRole') Role:
+      select#regRole(required='')
+        option(value='') --Select Role--
+        option(value='admin') Administrator
+        option(value='manager') Manager
+        option(value='attendant') Attendant
+      form(onsubmit='registerAndRedirect(); return false;')
+        button.btn(type='submit') Register
+      p
+        | Already have an account? 
+        a(href='login.html') Login here
+footer
+  p &copy; 2025 Mayondo Wood &amp; Furniture Ltd
+script(src='/public/js/register.js')
