@@ -2,16 +2,16 @@
 function renderSalesTable() {
   const sales = JSON.parse(localStorage.getItem("sales")) || [];
   const tbody = document.getElementById("salesBody");
-  if (!tbody) return; // only run on sales.html
+  if (!tbody) return;
 
   if (sales.length === 0) {
-    tbody.innerHTML = `<tr><td colspan="8">No sales recorded.</td></tr>`;
+    tbody.innerHTML = `<tr><td colspan="9">No sales recorded.</td></tr>`;
     return;
   }
 
   tbody.innerHTML = "";
   sales.forEach((sale, index) => {
-    const discountText = sale.discount === "Transport5" ? "5% Transport" : "No";
+    const transportText = sale.transport === "yes" ? "5% Transport" : "No";
 
     tbody.innerHTML += `
       <tr>
@@ -21,8 +21,8 @@ function renderSalesTable() {
         <td>${sale.date}</td>
         <td>${sale.payment}</td>
         <td>${sale.agent}</td>
-        <td>Shs. ${sale.total}</td>
-        <td>${discountText}</td>
+        <td>${transportText}</td>
+        <td>${sale.total}</td>
         <td>
           <button onclick="editSale(${index})">✏️ Edit</button>
           <button onclick="deleteSale(${index})">🗑️ Delete</button>
@@ -31,7 +31,6 @@ function renderSalesTable() {
     `;
   });
 }
-
 
 // Delete sale
 function deleteSale(index) {
@@ -50,26 +49,26 @@ function editSale(index) {
 
   const newCustomer = prompt("Customer Name:", s.customer) || s.customer;
   const newProduct = prompt("Product:", s.product) || s.product;
-  const newQty = prompt("Quantity:", s.qty) || s.qty;
+  const newQty = parseInt(prompt("Quantity:", s.qty)) || s.qty;
+  const newPrice = parseFloat(prompt("Price per Item:", s.price)) || s.price;
   const newDate = prompt("Date:", s.date) || s.date;
   const newPayment = prompt("Payment Type:", s.payment) || s.payment;
   const newAgent = prompt("Sales Agent:", s.agent) || s.agent;
-  const newDiscount = prompt("Discount (No/Transport5):", s.discount) || s.discount;
+  const newTransport = prompt("Transport (yes/no):", s.transport) || s.transport;
 
-  // Recalculate total if discount changed
-  let pricePerItem = parseFloat(prompt("Price per item (needed for recalculation):", 0));
-  let total = pricePerItem * parseInt(newQty);
-  if (newDiscount === "Transport5") total -= total * 0.05;
+  let total = newQty * newPrice;
+  if (newTransport === "yes") total += total * 0.05;
 
   sales[index] = {
     customer: newCustomer,
     product: newProduct,
-    qty: parseInt(newQty),
+    qty: newQty,
+    price: newPrice,
     date: newDate,
     payment: newPayment,
     agent: newAgent,
-    discount: newDiscount,
-    total: total.toFixed(2),
+    transport: newTransport,
+    total: `Shs. ${total.toFixed(2)}`
   };
 
   localStorage.setItem("sales", JSON.stringify(sales));

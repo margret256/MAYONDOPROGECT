@@ -1,13 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Add Sale | Mayondo Wood & Furniture</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
   <header>
     <h1>Add Sale</h1>
@@ -21,10 +19,11 @@
       </ul>
     </nav>
   </header>
+
   <main class="form-container">
     <div class="form-box">
       <h2>Enter Sale Details</h2>
-      <form id="saleForm" onsubmit="saveAttendant(); return false;">
+      <form id="saleForm">
         <label for="customerName">Customer Name:</label>
         <input type="text" id="customerName" name="customerName" required>
 
@@ -34,38 +33,39 @@
         <label for="quantity">Quantity:</label>
         <input type="number" id="quantity" name="quantity" required>
 
-        <label for="date">Price:</label>
-        <input type="price" id="price" name="price" required>
+        <label for="price">Price per Item:</label>
+        <input type="number" id="price" name="price" required>
 
         <label for="paymentType">Payment Type:</label>
         <select id="paymentType" name="paymentType" required>
-
           <option value="Cash">Cash</option>
           <option value="Cheque">Cheque</option>
           <option value="Bank Transfer">Bank Transfer</option>
           <option value="Overdraft">Overdraft</option>
         </select>
+
         <label for="transport">Include Transport:</label>
         <select id="transport" name="transport" required>
-          <option value="yes">YES (ADD 5%)</option>
-          <option value="no">NO</option>
+          <option value="no">No</option>
+          <option value="yes">Yes (Add 5%)</option>
         </select>
+
         <label for="agent">Sales Agent:</label>
         <input type="text" id="agent" name="agent" required>
 
         <label for="date">Date of Sale:</label>
         <input type="date" id="date" name="date" required>
 
-        <!-- <input type="number" id="totalPrice" name="totalPrice" required> -->
-        <p><span id="totalprice">SHS 0.00</span></p>
+        <p><strong>Total:</strong> <span id="totalprice">Shs. 0.00</span></p>
 
         <button type="submit" class="btn">Save Sale</button>
       </form>
+    </div>
   </main>
+
   <footer>
     <p>&copy; 2025 Mayondo Wood & Furniture Ltd</p>
   </footer>
   <script src="js/add-sales.js"></script>
 </body>
-
 </html>
