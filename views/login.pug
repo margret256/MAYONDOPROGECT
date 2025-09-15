@@ -3,7 +3,7 @@ head
   meta(charset='UTF-8')
   meta(name='viewport' content='width=device-width, initial-scale=1.0')
   title Login | Mayondo Wood &amp; Furniture
-  link(rel='stylesheet' href='/public/CSS/style.css')
+  link(rel='stylesheet' href='/CSS/style.css')
 header
   h1 Mayondo Wood &amp; Furniture
   p Login to continue
@@ -11,13 +11,13 @@ main.form-container
   .form-box
     h2 Login
     // Correct form
-    form#loginForm(onsubmit='redirectToRole(); return false;')
+    form#loginForm(action='/login' method='post')
       label(for='loginEmail') Email:
-      input#loginEmail(type='email' required='')
+      input#loginEmail(type='email' name='email' required='')
       label(for='loginPassword') Password:
-      input#loginPassword(type='password' required='')
+      input#loginPassword(type='password' name='password' required='')
       label(for='loginRole') Role:
-      select#loginRole(required='')
+      select#loginRole(required='' name='role')
         option(value='') --Select Role--
         option(value='admin') Administrator
         option(value='manager') Manager
@@ -25,7 +25,7 @@ main.form-container
       button.btn(type='submit') Login
     p
       | Don&apos;t have an account? 
-      a(href='register.html') Register here
+      a(href='/register') Register here
 footer
   p &copy; 2025 Mayondo Wood &amp; Furniture Ltd
-script(src='/public/js/login.js')
+script(src='/js/login.js')

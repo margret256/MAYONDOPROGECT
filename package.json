@@ -1,0 +1,36 @@
+{
+  "name": "mayondoprogect",
+  "version": "1.0.0",
+  "description": "Mayondo Wood & Furniture Business System -\r Project Report\r 1. Introduction\r Mayondo Wood & Furniture is a small but growing workshop specializing in the production and sale\r of wooden furniture. As the business expanded, managing records such as sales, stock, finances,\r and customer orders manually became difficult. This project was developed to create a simple\r web-based system to help manage daily operations more efficiently.\r 2. Problem Statement\r The business faced several challenges before introducing the system:\r - Poor record keeping (manual books easily got lost or damaged).\r - Low employee accountability due to lack of clear records.\r - Difficulty in tracking stock, inputs, and outputs.\r - Customers lacked an easy way to place and track orders.\r - Managers struggled with monitoring finances, sales, and customer data in real time.\r 3. Objectives of the System\r - Provide a login and registration system for different roles (Admin, Manager, Employee/Attendant,\r Customer).\r - Create separate dashboards so each role only sees the information relevant to them.\r - Automate sales recording (calculate totals and update tables).\r - Maintain accurate stock levels by updating when new products arrive.\r - Store and track customer orders and details.\r - Provide the Manager with financial reports, sales summaries, and customer records.\r 4. System Features\r User Authentication:\r - Login Page allows users to select their role.\r - Register Page lets new users create an account.\r Dashboards:\r - Manager: Can view finances, sales, stock, customers, inputs & outputs.\r - Employee: Record new sales, update stock, view customer orders.\r - Customer: View products, place orders, check order history.\r - Admin: Manage users and oversee the system.\r Sales Management:\r - Add new sales with product, quantity, and price.\r - Automatically calculate totals and update the table.\r Stock Management:\r - Add new stock when products arrive.\r - Keep track of available levels.\r Customer Records:\r - Store customer details and order history.\r 5. Design\r The system uses brown, cream/beige, olive green, and tan colors to reflect a natural wood theme.\r CSS was applied for layout, styling forms, buttons, and tables, while ensuring responsiveness for\r both desktop and mobile use.\r 6. Technology Used\r - HTML: Structure of the pages (login, register, dashboards).\r - CSS: Styling and design (colors, forms, layouts).\r - JavaScript: Adds functionality such as redirection, adding sales, and updating tables.\r 7. Benefits of the System\r - Improves accuracy of records.\r - Reduces paper-based record keeping.\r - Increases employee accountability.\r - Saves time by automating calculations and updates.\r - Helps managers make informed decisions.\r - Enhances customer experience with easier ordering.\r 8. Conclusion\r The Mayondo Wood & Furniture Business System provides an effective solution for managing\r sales, stock, finances, and customers. By integrating login/registration, dashboards, and automated\r record keeping, the system reduces business risks, increases productivity, and supports future\r growth.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/margret256/MAYONDOPROGECT.git"
+  },
+  "keywords": [
+    "mayondo",
+    "project"
+  ],
+  "author": "Margret Nanyonga",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/margret256/MAYONDOPROGECT/issues"
+  },
+  "homepage": "https://github.com/margret256/MAYONDOPROGECT#readme",
+  "dependencies": {
+    "connect-mongo": "^5.1.0",
+    "dotenv": "^17.2.2",
+    "express": "^5.1.0",
+    "express-session": "^1.18.2",
+    "moment": "^2.30.1",
+    "mongoose": "^8.18.1",
+    "nodemon": "^3.1.10",
+    "passport": "^0.7.0",
+    "passport-local-mongoose": "^8.0.0",
+    "pug": "^3.0.3"
+  }
+}

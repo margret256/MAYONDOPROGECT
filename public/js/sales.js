@@ -1,4 +1,3 @@
-// Render sales table
 function renderSalesTable() {
   const sales = JSON.parse(localStorage.getItem("sales")) || [];
   const tbody = document.getElementById("salesBody");
@@ -32,7 +31,6 @@ function renderSalesTable() {
   });
 }
 
-// Delete sale
 function deleteSale(index) {
   let sales = JSON.parse(localStorage.getItem("sales")) || [];
   if (confirm("Are you sure you want to delete this sale record?")) {
@@ -42,7 +40,6 @@ function deleteSale(index) {
   }
 }
 
-// Edit sale
 function editSale(index) {
   let sales = JSON.parse(localStorage.getItem("sales")) || [];
   const s = sales[index];
@@ -76,5 +73,4 @@ function editSale(index) {
   renderSalesTable();
 }
 
-// Run on page load
 document.addEventListener("DOMContentLoaded", renderSalesTable);

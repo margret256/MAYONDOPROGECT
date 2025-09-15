@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Stock | Mayondo Wood & Furniture</title>
+    <link rel="stylesheet" href="/public/CSS/style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Add Stock</h1>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="stock.html">View Stock</a></li>
+                <li><a href="attendant-dashboard.html">Dashboard</a></li>
+                <li><a href="logout.html">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- ✅ Add Stock Form -->
+        <div class="form-box">
+            <h2>New Stock Entry</h2>
+            <form id="stockForm">
+                <label for="productName">Product Name</label>
+                <input type="text" id="productName" required>
+
+                <label for="productType">Type</label>
+                <input type="text" id="productType" required>
+
+                <label for="costPrice">Cost Price</label>
+                <input type="number" id="costPrice" required>
+
+                <label for="salePrice">Sale Price</label>
+                <input type="number" id="salePrice" required>
+
+                <label for="quantity">Quantity</label>
+                <input type="number" id="quantity" required>
+                <div class="add-btn">
+                    <a href="/public/js/add-stock.js" class="btn">➕ Add Stock</a>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Mayondo Wood & Furniture Ltd</p>
+    </footer>
+</body>
+
+</html>

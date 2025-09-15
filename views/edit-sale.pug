@@ -1,0 +1,81 @@
+doctype html
+html
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    title Edit Sale | Mayondo Wood & Furniture
+    link(rel='stylesheet' href='/CSS/style.css')
+  body
+    header
+      h1 Edit Sale
+      nav
+        ul.nav-links
+          li
+            a(href='/admin-dashboard') Dashboard
+          li
+            a(href='/inventory') Inventory
+          li
+            a(href='/sales') Sales
+          li
+            a(href='/stock') Stock
+          li
+            a(href='/logout') Logout
+    main.form-container
+      .form-box
+        h2 Update Sale Details
+        form(action=`/sales/edit/${sale._id}` method='POST')
+          label(for='customer') Customer Name:
+          input#customer(type='text' name='customer' value=sale.customer required)
+          
+          label(for='product') Product:
+          input#product(type='text' name='product' value=sale.product required)
+          
+          label(for='quantity') Quantity:
+          input#quantity(type='number' name='qty' value=sale.qty required)
+          
+          label(for='price') Price per Item:
+          input#price(type='number' name='price' value=sale.price required)
+          
+          label(for='payment') Payment Type:
+          select#payment(name='payment' required)
+            option(value='Cash' selected=sale.payment==='Cash') Cash
+            option(value='Cheque' selected=sale.payment==='Cheque') Cheque
+            option(value='Bank Transfer' selected=sale.payment==='Bank Transfer') Bank Transfer
+            option(value='Overdraft' selected=sale.payment==='Overdraft') Overdraft
+          
+          label(for='transport') Include Transport:
+          select#transport(name='transport' required)
+            option(value='no' selected=sale.transport==='no') No
+            option(value='yes' selected=sale.transport==='yes') Yes (Add 5%)
+          
+          label(for='agent') Sales Agent:
+          input#agent(type='text' name='agent' value=sale.agent required)
+          
+          label(for='date') Date of Sale:
+          input#date(type='date' name='date' value=sale.date.toISOString().split('T')[0] required)
+          
+          p
+            strong Total:
+            span#totalprice Shs. #{sale.total.toFixed(2)}
+          
+          button.btn(type='submit') Update Sale
+    footer
+      p &copy; 2025 Mayondo Wood & Furniture Ltd
+    script.
+      const qtyEl = document.getElementById('quantity');
+      const priceEl = document.getElementById('price');
+      const transportEl = document.getElementById('transport');
+      const totalEl = document.getElementById('totalprice');
+
+      function calculateTotal() {
+        const qty = parseFloat(qtyEl.value) || 0;
+        const price = parseFloat(priceEl.value) || 0;
+        const transport = transportEl.value;
+        let total = qty * price;
+        if(transport === 'yes') total += total * 0.05;
+        totalEl.textContent = `Shs. ${total.toFixed(2)}`;
+      }
+
+      qtyEl.addEventListener('input', calculateTotal);
+      priceEl.addEventListener('input', calculateTotal);
+      transportEl.addEventListener('change', calculateTotal);

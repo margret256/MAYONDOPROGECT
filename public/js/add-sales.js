@@ -1,54 +1,50 @@
-// Get form elements
-const form = document.getElementById("saleForm");
-const qtyInput = document.getElementById("quantity");
-const priceInput = document.getElementById("price");
-const transportSelect = document.getElementById("transport");
-const totalDisplay = document.getElementById("totalprice");
+const saleForm = document.getElementById("saleForm");
+const totalPriceEl = document.getElementById("totalprice");
 
-// Function to calculate live total
 function calculateTotal() {
-  const price = parseFloat(priceInput.value) || 0;
-  const qty = parseInt(qtyInput.value) || 0;
-  const transportValue = transportSelect.value;
-
-  let total = price * qty;
-  if (transportValue === "yes") total += total * 0.05; // add 5%
-
-  totalDisplay.textContent = `Shs. ${total.toFixed(2)}`;
+  const qty = parseFloat(document.getElementById("quantity").value) || 0;
+  const price = parseFloat(document.getElementById("price").value) || 0;
+  const transport = document.getElementById("transport").value;
+  let total = qty * price;
+  if (transport === "yes") total += total * 0.05;
+  totalPriceEl.textContent = `Shs. ${total.toFixed(2)}`;
+  return total;
 }
 
-// Update total live
-qtyInput.addEventListener("input", calculateTotal);
-priceInput.addEventListener("input", calculateTotal);
-transportSelect.addEventListener("change", calculateTotal);
+document.getElementById("quantity").addEventListener("input", calculateTotal);
+document.getElementById("price").addEventListener("input", calculateTotal);
+document.getElementById("transport").addEventListener("change", calculateTotal);
 
-// Handle form submission
-form?.addEventListener("submit", function (e) {
+saleForm.addEventListener("submit", function(e) {
   e.preventDefault();
+  
+  const sales = JSON.parse(localStorage.getItem("sales")) || [];
 
-  const sale = {
-    customer: document.getElementById("customerName").value,
-    product: document.getElementById("product").value,
-    qty: parseInt(qtyInput.value),
-    price: parseFloat(priceInput.value),
-    date: document.getElementById("date").value,
-    payment: document.getElementById("paymentType").value,
-    agent: document.getElementById("agent").value,
-    transport: transportSelect.value,
-    total: totalDisplay.textContent
-  };
+  const customer = document.getElementById("customerName").value;
+  const product = document.getElementById("product").value;
+  const qty = parseInt(document.getElementById("quantity").value);
+  const price = parseFloat(document.getElementById("price").value);
+  const payment = document.getElementById("paymentType").value;
+  const agent = document.getElementById("agent").value;
+  const date = document.getElementById("date").value;
+  const transport = document.getElementById("transport").value;
 
-  // Save to localStorage
-  let sales = JSON.parse(localStorage.getItem("sales")) || [];
-  sales.push(sale);
+  let total = qty * price;
+  if (transport === "yes") total += total * 0.05;
+
+  sales.push({
+    customer,
+    product,
+    qty,
+    price,
+    payment,
+    agent,
+    date,
+    transport,
+    total: `Shs. ${total.toFixed(2)}`
+  });
+
   localStorage.setItem("sales", JSON.stringify(sales));
-
-  alert(`✅ Sale recorded for ${sale.customer}. Total: ${sale.total}`);
-
-  // Reset form
-  form.reset();
-  totalDisplay.textContent = "Shs. 0.00";
-
-  // Redirect
-  window.location.href = "sales.html";
+  alert("✅ Sale recorded successfully!");
+  window.location.href = "sales.html"; // redirect to sales page
 });

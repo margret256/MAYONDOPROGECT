@@ -3,31 +3,31 @@ head
   meta(charset='UTF-8')
   meta(name='viewport' content='width=device-width, initial-scale=1.0')
   title Register | Mayondo Wood &amp; Furniture
-  link(rel='stylesheet' href='/public/CSS/style.css')
+  link(rel='stylesheet' href='/CSS/style.css')
 header
   h1 Mayondo Wood &amp; Furniture
   p Create an account
 main.form-container
   .form-box
     h2 Register
-    form#registerForm
+    form(action='/register' method='post')
       label(for='regName') Full Name:
-      input#regName(type='text' required='')
+      input#regName(type='text' name='fullname' required='')
       label(for='regEmail') Email:
-      input#regEmail(type='email' required='')
+      input#regEmail(type='email' name='email' required='')
       label(for='regPassword') Password:
-      input#regPassword(type='password' required='')
+      input#regPassword(type='password' name='passward' required='')
       label(for='regRole') Role:
-      select#regRole(required='')
+      select#regRole(required='' name='role')
         option(value='') --Select Role--
         option(value='admin') Administrator
         option(value='manager') Manager
         option(value='attendant') Attendant
       form(onsubmit='registerAndRedirect(); return false;')
-        button.btn(type='submit') Register
+        button.btn(type='submit' name='submit') Register
       p
         | Already have an account? 
-        a(href='login.html') Login here
+        a(href='/login') Login here
 footer
   p &copy; 2025 Mayondo Wood &amp; Furniture Ltd
-script(src='/public/js/register.js')
+script(src='/js/register.js')

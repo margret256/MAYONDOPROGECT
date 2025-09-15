@@ -1,16 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Attendant Dashboard | Mayondo Wood & Furniture</title>
   <link rel="stylesheet" href="/public/CSS/style.css">
 </head>
+
 <body>
   <header>
     <h1>Attendant Dashboard</h1>
     <nav>
       <ul class="nav-links">
+        <li><a href="sales.html">Sales</a></li>
+        <li><a href="stock.html">Stock</a></li>
         <li><a href="logout.html">Logout</a></li>
       </ul>
     </nav>
@@ -69,13 +73,14 @@
       </div>
     </div>
   </main>
-<button onclick="window.location.href='add-attendant.html'">
-  Manage Attendants
-</button>
-
+  <button onclick="window.location.href='/html/add-attendant.html'"></button>
+  <div class="add-btn">
+    <a class="btn">➕ Add New Attendants</a>
+  </div>
   <footer>
     <p>&copy; 2025 Mayondo Wood & Furniture Ltd</p>
   </footer>
-   <script src="/public/js/script.js"></script>
+  <script src="/public/js/script.js"></script>
 </body>
+
 </html>

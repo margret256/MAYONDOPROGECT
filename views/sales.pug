@@ -1,40 +1,58 @@
 doctype html
-head
-  meta(charset='UTF-8')
-  meta(name='viewport' content='width=device-width, initial-scale=1.0')
-  title Sales | Mayondo Wood &amp; Furniture
-  link(rel='stylesheet' href='/public/CSS/style.css')
-header
-  h1 Sales
-  nav
-    ul.nav-links
-      li
-        a(href='admin-dashboard.html') Dashboard
-      li
-        a(href='inventory.html') Inventory
-      li
-        a(href='add-product.html') Add Products
-      li
-        a(href='stock.html') Stock
-      li
-        a(href='logout.html') Logout
-main.sales-page
-  h2 Sales Records
-  table#salesTable(border='1')
-    thead
-      tr
-        th Customer
-        th Product
-        th Quantity
-        th Date
-        th Payment
-        th Agent
-        th Discount/Transport
-        th Total
-        th Actions
-    tbody#salesBody
-  .add-btn
-    a.btn(href='/public/js/add-sales.js') &#x2795; Add New Sale
-footer
-  p &copy; 2025 Mayondo Wood &amp; Furniture Ltd
-script(src='js/sales.js')
+html
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    title Sales | Mayondo Wood & Furniture
+    link(rel='stylesheet' href='/CSS/style.css')
+  body
+    header
+      h1 Sales Records
+      nav
+        ul.nav-links
+          li
+            a(href='/admin-dashboard') Dashboard
+          li
+            a(href='/inventory') Inventory
+          li
+            a(href='/add-sales') Add Sale
+          li
+            a(href='/stock') Stock
+          li
+            a(href='/logout') Logout
+    main.sales-page
+      h2 Sales Records
+      table#salesTable(border='1')
+        thead
+          tr
+            th Customer
+            th Product
+            th Quantity
+            th Date
+            th Payment
+            th Agent
+            th Transport
+            th Total
+            th Actions
+        tbody#salesBody
+          if sales.length === 0
+            tr
+              td(colspan='9') No sales recorded.
+          else
+            each sale in sales
+              tr
+                td= sale.customer
+                td= sale.product
+                td= sale.qty
+                td= sale.date.toISOString().split('T')[0]
+                td= sale.payment
+                td= sale.agent
+                td= sale.transport === 'yes' ? '5% Transport' : 'No'
+                td Shs. #{sale.total.toFixed(2)}
+                td
+                  button(action=`/sales/edit/${sale ._id}` style='display:inline-block; gap:10px; padding:3px 8px; margin-right:5px; background-color:#4CAF50; color:white; border-radius:3px; text-decoration:none; font-size:12px; font-weight:bolder; line-height:1; text-align:center;justify-content:center') ✏️ Edit
+                    form(action=`/sales/delete/${sale ._id}` method='POST' style='display:inline')
+                      button(type='submit' style='display:inline-block; padding:3px 8px; background-color:#f44336; color:white; border-radius:3px; font-size:12px; font-weight:bolder; line-height:1; text-align:center; border-radius:3px;cursor:pointer; justify-content:center') 🗑️ Delete
+                 
+    footer
+      p &copy; 2025 Mayondo Wood & Furniture Ltd

@@ -3,13 +3,15 @@ head
   meta(charset='UTF-8')
   meta(name='viewport' content='width=device-width, initial-scale=1.0')
   title Add Attendant | Mayondo Wood &amp; Furniture
-  link(rel='stylesheet' href='/public/CSS/add-attendant.css')
+  link(rel='stylesheet' href='/CSS/add-attendant.css')
 header
   h1 Mayondo Wood &amp; Furniture
   nav
     ul.nav-links
       li
-        a(href='logout.html') Logout
+        a(href='/attendant-dashboard') Dashboard
+      li
+        a(href='/logout') Logout
 main.form-container
   .form-box
     h2 Register Attendant
@@ -34,7 +36,6 @@ main.form-container
         th Phone
         th Action
     tbody
-      // Attendants will appear here
-script(src='/public/js/add-attendant.js')
+script(src='/js/add-attendant.js')
 footer
   p &copy; 2025 Mayondo Wood &amp; Furniture Ltd

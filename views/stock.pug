@@ -1,63 +1,50 @@
 doctype html
-head
-  meta(charset='UTF-8')
-  meta(name='viewport' content='width=device-width, initial-scale=1.0')
-  title Stock | Mayondo Wood &amp; Furniture
-  link(rel='stylesheet' href='/public/CSS/style.css')
-header
-  h1 Stock
-  nav
-    ul.nav-links
-      li
-        a(href='admin-dashboard.html') Dashboard
-      li
-        a(href='inventory.html') Inventory
-      li
-        a(href='sales.html') Sales
-      li
-        a(href='logout.html') Logout
-main.stock-page
-  h2 Stock Levels
-  table#stockTable
-    thead
-      tr
-        th Product Name
-        th Type
-        th Cost Price
-        th Sale Price
-        th Quantity Available
-    tbody
-      tr
-        td Timber (Hardwood)
-        td Wood
-        td $150
-        td $200
-        td 50
-      tr
-        td Book Shelf
-        td Furniture
-        td $500
-        td $750
-        td 10
-      tr
-        td CoffeeTable
-        td Furniture
-        td $250
-        td $500
-        td 60
-      tr
-        td Beds
-        td Furniture
-        td $350
-        td $900
-        td 95
-      tr
-        td Chairs
-        td Furniture
-        td $950
-        td $1000
-        td 100
-footer
-  p &copy; 2025 Mayondo Wood &amp; Furniture Ltd
-script(src='/public/js/stock.js')
-script(src='/public/js/script.js')
+html
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    title Stock | Mayondo Wood & Furniture
+    link(rel='stylesheet' href='/CSS/style.css')
+  body
+    header
+      h1 Stock
+      nav
+        ul.nav-links
+          li
+            a(href='/manager-dashboard') Dashboard
+          li
+            a(href='/inventory') Inventory
+          li
+            a(href='/sales') Sales
+          li
+            a(href='/add-stock') Add Stock
+          li
+            a(href='/logout') Logout
+    main.stock-page
+      h2 Stock Levels
+      table#stockTable
+        thead
+          tr
+            th Product Name 
+            th Product Type 
+            th Cost Price 
+            th Sale Price 
+            th Quantity 
+            th Actions
+        tbody
+         if stock && stock.length
+          each item in stock
+            tr
+              td= item.productName
+              td= item.producttype 
+              td= item.costprice 
+              td= item.saleprice 
+              td= item.quantity
+              td
+                  button(action=`/edit-stock/${item._id}` style='display:inline-block; gap:10px; padding:3px 8px; margin-right:5px; background-color:#4CAF50; color:white; border-radius:3px; text-decoration:none; font-size:12px; font-weight:bolder; line-height:1; text-align:center;justify-content:center') ✏️ Edit
+                    form(action=`/delete-stock/${item._id}` method='POST' style='display:inline')
+                      button(type='submit' style='display:inline-block; padding:3px 8px; background-color:#f44336; color:white; border-radius:3px; font-size:12px; font-weight:bolder; line-height:1; text-align:center; border-radius:3px;cursor:pointer; justify-content:center') 🗑️ Delete
+    footer
+      p &copy; 2025 Mayondo Wood & Furniture Ltd
+    script(src='/js/stock.js')
+    script(src='/js/script.js')
