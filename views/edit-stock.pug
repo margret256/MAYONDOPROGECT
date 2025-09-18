@@ -1,0 +1,42 @@
+doctype html
+html
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    title Edit Stock | Mayondo Wood & Furniture
+    link(rel='stylesheet' href='/CSS/style.css')
+  body
+    header
+      h1 Edit Stock
+      nav
+        ul.nav-links
+          li
+            a(href='/stock') View Stock
+          li
+            a(href='/attendant-dashboard') Dashboard
+          li
+            a(href='/logout') Logout
+    main
+      .form-box
+        h2 Update Stock Entry
+        //- Form now points to the correct edit route with POST
+        form#editStockForm(action=`/edit-stock/${stock._id}` method='post')
+          label(for='productName') Product Name
+          input#productName(type='text' name='productName' value=stock.productName required)
+
+          label(for='productType') Product Type
+          input#productType(type='text' name='productType' value=stock.productType required)
+
+          label(for='costPrice') Cost Price
+          input#costPrice(type='number' name='costPrice' value=stock.costPrice required)
+
+          label(for='salePrice') Sale Price
+          input#salePrice(type='number' name='salePrice' value=stock.salePrice required)
+
+          label(for='quantity') Quantity
+          input#quantity(type='number' name='quantity' value=stock.quantity required)
+
+          .update-btn
+            button.btn(type='submit') &#x270E; Update Stock
+    footer
+      p &copy; 2025 Mayondo Wood & Furniture Ltd

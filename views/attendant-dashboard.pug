@@ -10,8 +10,8 @@ header
     ul.nav-links
       li
         a(href='/sales') Sales
-      li
-        a(href='/stock') Stock
+      //- li
+      //-   a(href='/stock') Stock
       li
         a(href='/logout') Logout
 main.attendant-page
@@ -49,9 +49,11 @@ main.attendant-page
       img(src='/images/attendant 8.jpg' alt='Attendant 8')
       h3 Mark Lubenga
       p Role: Delivery Coordination
-button(onclick="window.location.href='/add-attendant'")
-.add-btn
-  a.btn &#x2795; Add New Attendants
+button(
+  onclick="window.location.href='/add-attendant'"
+  style="background-color: #f16208ff; color: white; padding: 8px 16px; border: none; item-align:center, border-radius: 5px; font-size: 14px; cursor: pointer;"
+)
+  | &#x2795; Add New Attendants
 footer
   p &copy; 2025 Mayondo Wood &amp; Furniture Ltd
 script(src='/js/script.js')

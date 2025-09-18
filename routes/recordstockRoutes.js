@@ -1,23 +1,23 @@
 const express = require("express");
 const router = express.Router();
-const Stock = require("../models/recordstockModel"); // your Mongoose model
+const Stock = require("../models/recordstockModel"); 
 
 // GET Add Stock page
 router.get("/add-stock", (req, res) => {
-  res.render("add-stock"); // add-stock.pug
+  res.render("add-stock");
 });
 
 // POST Add Stock
 router.post("/add-stock", async (req, res) => {
   try {
-    const { productname, producttype, costprice, saleprice, quantity } = req.body;
+    const { productName, productType, costPrice, salePrice, quantity } = req.body;
 
     const newStock = new Stock({
-      productName: productname,
-      productType: producttype,
-      costPrice: costprice,
-      salePrice: saleprice,
-      quantity: quantity
+      productName,
+      productType,
+      costPrice,
+      salePrice,
+      quantity
     });
 
     await newStock.save();
@@ -41,40 +41,41 @@ router.get("/stock", async (req, res) => {
 });
 
 // GET Edit Stock page
-router.get("/edit-stock/:id", async (req, res) => {
+router.get("/edit-stock/:id", async (req, res) => {   
   try {
     const stockItem = await Stock.findById(req.params.id);
     if (!stockItem) return res.status(404).send("Stock item not found");
-    res.render("edit-stock", { stock: stockItem }); // edit-stock.pug
+
+    res.render("edit-stock", { stock: stockItem });
   } catch (err) {
-    console.error(err);
+    console.error("❌ Error fetching stock data:", err);
     res.status(500).send("Error fetching stock data");
   }
 });
 
 // POST Update Stock
-router.post("/edit-stock/:id", async (req, res) => {
+router.post("/edit-stock/:id", async (req, res) => {  
   try {
-    const { productname, producttype, costprice, saleprice, quantity } = req.body;
+    const { productName, productType, costPrice, salePrice, quantity } = req.body;
 
     await Stock.findByIdAndUpdate(req.params.id, {
-      productName: productname,
-      productType: producttype,
-      costPrice: costprice,
-      salePrice: saleprice,
-      quantity: quantity
+      productName,
+      productType,
+      costPrice,
+      salePrice,
+      quantity
     });
 
     console.log("✅ Stock updated:", req.params.id);
     res.redirect("/stock");
   } catch (err) {
-    console.error(err);
+    console.error("❌ Error updating stock:", err);
     res.status(500).send("Error updating stock data");
   }
 });
 
 // DELETE Stock
-router.post("/delete-stock/:id", async (req, res) => {
+router.post("/delete-stock/:id", async (req, res) => { 
   try {
     await Stock.findByIdAndDelete(req.params.id);
     console.log("🗑 Stock deleted:", req.params.id);

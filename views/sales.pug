@@ -50,9 +50,10 @@ html
                 td= sale.transport === 'yes' ? '5% Transport' : 'No'
                 td Shs. #{sale.total.toFixed(2)}
                 td
-                  button(action=`/sales/edit/${sale ._id}` style='display:inline-block; gap:10px; padding:3px 8px; margin-right:5px; background-color:#4CAF50; color:white; border-radius:3px; text-decoration:none; font-size:12px; font-weight:bolder; line-height:1; text-align:center;justify-content:center') ✏️ Edit
-                    form(action=`/sales/delete/${sale ._id}` method='POST' style='display:inline')
-                      button(type='submit' style='display:inline-block; padding:3px 8px; background-color:#f44336; color:white; border-radius:3px; font-size:12px; font-weight:bolder; line-height:1; text-align:center; border-radius:3px;cursor:pointer; justify-content:center') 🗑️ Delete
-                 
+                  //- Edit as a link styled like a button
+                  a(href=`/sales/edit/${sale._id}` style='display:inline-block; gap:10px; padding:3px 8px; margin-right:5px; background-color:#4CAF50; color:white; border-radius:3px; text-decoration:none; font-size:12px; font-weight:bolder; line-height:1; text-align:center; cursor:pointer') ✏️ Edit
+                  //- Delete as a form button
+                  form(action=`/sales/delete/${sale._id}` method='POST' style='display:inline')
+                    button(type='submit' style='display:inline-block; padding:3px 8px; background-color:#f44336; color:white; border-radius:3px; font-size:12px; font-weight:bolder; line-height:1; text-align:center; cursor:pointer') 🗑️ Delete
     footer
       p &copy; 2025 Mayondo Wood & Furniture Ltd

@@ -1,24 +1,24 @@
 const mongoose = require("mongoose");
 
 const recordstockSchema = new mongoose.Schema({
-  customerName: {
+productName: {
     type: String,
     // required: true,
   },
-  productName: {
+  productType: {
     type: String,
+    // required: true,
+  },
+  costPrice: {
+    type: Number,
+    // required: true,
+  },
+  salePrice: {
+    type: Number,
     // required: true,
   },
   quantity: {
     type: Number,
-    // required: true,
-  },
-  pricePerItem: {
-    type: Number,
-    // required: true,
-  },
-  salesAgent: {
-    type: String,
     // required: true,
   }
 });

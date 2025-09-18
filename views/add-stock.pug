@@ -20,16 +20,24 @@ main
     h2 New Stock Entry
     form#stockForm(action='/add-stock' method='post')
       label(for='productName') Product Name
-      input#productName(type='text' name='productname' required='')
+      input#productName(type='text' name='productName' required)
+
       label(for='productType') Product Type
-      input#productType(type='text' name='producttype' required='')
+      input#productType(type='text' name='productType' required)
+      select#productType(required='' name='producttype')
+            option(value='') --Select--
+            option(value='Wood') Wood
+            option(value='Furniture') Furniture
       label(for='costPrice') Cost Price
-      input#costPrice(type='number' name='costprice ' required='')
+      input#costPrice(type='number' name='costPrice' required)
+
       label(for='salePrice') Sale Price
-      input#salePrice(type='number' name='saleprice' required='')
+      input#salePrice(type='number' name='salePrice' required)
+
       label(for='quantity') Quantity
-      input#quantity(type='number' name='quantity' required='')
+      input#quantity(type='number' name='quantity' required)
+
       .add-btn
-         button.btn(type='submit') &#x2795; Add Stock
+        button.btn(type='submit') &#x2795; Add Stock
 footer
   p &copy; 2025 Mayondo Wood &amp; Furniture Ltd

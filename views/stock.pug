@@ -36,14 +36,17 @@ html
           each item in stock
             tr
               td= item.productName
-              td= item.producttype 
-              td= item.costprice 
-              td= item.saleprice 
+              td= item.productType
+              td= item.costPrice
+              td= item.salePrice
               td= item.quantity
               td
-                  button(action=`/edit-stock/${item._id}` style='display:inline-block; gap:10px; padding:3px 8px; margin-right:5px; background-color:#4CAF50; color:white; border-radius:3px; text-decoration:none; font-size:12px; font-weight:bolder; line-height:1; text-align:center;justify-content:center') ✏️ Edit
-                    form(action=`/delete-stock/${item._id}` method='POST' style='display:inline')
-                      button(type='submit' style='display:inline-block; padding:3px 8px; background-color:#f44336; color:white; border-radius:3px; font-size:12px; font-weight:bolder; line-height:1; text-align:center; border-radius:3px;cursor:pointer; justify-content:center') 🗑️ Delete
+                // Edit button (styled link)
+                a(href=`/edit-stock/${item._id}` style='display:inline-block; padding:3px 8px; margin-right:5px; background-color:#4CAF50; color:white; border-radius:3px; font-size:12px; font-weight:bolder; line-height:1; text-align:center; text-decoration:none; cursor:pointer;') ✏️ Edit
+
+                // Delete button (form submit)
+                form(action=`/delete-stock/${item._id}` method='POST' style='display:inline')
+                  button(type='submit' style='display:inline-block; padding:3px 8px; background-color:#f44336; color:white; border-radius:3px; font-size:12px; font-weight:bolder; line-height:1; text-align:center; cursor:pointer;') 🗑️ Delete
     footer
       p &copy; 2025 Mayondo Wood & Furniture Ltd
     script(src='/js/stock.js')
